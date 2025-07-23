@@ -1,0 +1,5 @@
+env
+.env
+ai_trip_planner.egg-info
+
+# Local environment variables file
