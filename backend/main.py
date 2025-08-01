@@ -8,12 +8,14 @@ import datetime
 from dotenv import load_dotenv
 from pydantic import BaseModel
 load_dotenv()
+# ✅ Get frontend URL from .env
+frontend_url = os.environ.get("FRONTEND_URL", "*")
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # set specific origins in prod
+    allow_origins=[frontend_url],  # set specific origins in prod
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
